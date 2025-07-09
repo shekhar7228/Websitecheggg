@@ -28,9 +28,9 @@
         .bg-gradient-home { background: linear-gradient(to top, #e2e2e2, #f5f5f5); }
         .bg-gradient-guide { background: #f0f2f5; }
         .bg-gradient-posts { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
-        .bg-gradient-more { background: linear-gradient(135deg, #3a6186, #89253e); }
+        .bg-gradient-more { background: linear-gradient(to top, #e0eafc, #cfdef3); } 
         .bg-gradient-about { background: linear-gradient(to top, #141e30, #243b55); }
-        .bg-gradient-tools { background-color: #1a1a1a; } /* NEW: Background for Tools page */
+        .bg-gradient-tools { background-color: #1a1a1a; }
 
         /* === SPLASH SCREEN STYLES === */
         #splash-screen {
@@ -78,16 +78,14 @@
         .icon-apk { background-color: #dcfce7; } .icon-apk svg { color: #22c55e; }
         .icon-more { background-color: #e0f2fe; } .icon-more svg { color: #0ea5e9; }
 
-        /* === STYLES for Posts, More pages === */
+        /* === STYLES for Posts page === */
         .page-content-old { max-width: 800px; margin: 5px auto 20px; padding: 5px 15px 15px; background: transparent; }
-        .header { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-        .header h1 { margin: 0; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-family: 'Spectral', serif; font-size: 28px; }
+        #page-posts .header { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        #page-posts .header h1 { margin: 0; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-family: 'Spectral', serif; font-size: 28px; }
         .post { margin-bottom: 30px; text-align: center; } 
         .post-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
-        .post-title { font-family: 'Playpen Sans Arabic', sans-serif; font-size: 12px; color: #ffffff; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); margin-bottom: -6px; position: relative; letter-spacing: 0.5px; }
+        #page-posts .post-title { font-family: 'Playpen Sans Arabic', sans-serif; font-size: 12px; color: #ffffff; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); margin-bottom: -6px; position: relative; letter-spacing: 0.5px; }
         .post-image { width: 76%; height: auto; border-radius: 8px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: 0 auto; }
-        .link-list { list-style: none; padding: 0; }
-        .link-list li a { display: block; padding: 18px 25px; margin-bottom: 15px; background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(4px); color: #ffffff; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 20px; border-radius: 8px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
         
         /* STYLES for Header with Search Bar */
         .header-content { display: flex; justify-content: space-between; align-items: center; }
@@ -121,8 +119,8 @@
         .custom-social-button:hover { transform: scale(1.05); box-shadow: none; }
         .social-icon-png { width: 32px; height: 32px; object-fit: contain; margin-right: 0; }
 
-        /* === GUIDE PAGE STYLES === */
-        #page-guide { padding: 15px; }
+        /* === GUIDE & HOW-TO-PURCHASE PAGE STYLES === */
+        #page-guide, #page-how-to-purchase { padding: 15px; }
         .guide-section { margin-bottom: 25px; }
         .guide-title { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 16px; color: #4a4a4a; margin: 0 0 10px 0; }
         .guide-progress-bar { width: 100%; height: 4px; background-color: #e0e0e0; border-radius: 4px; overflow: hidden; margin-top: 15px; }
@@ -136,67 +134,129 @@
         .warning-box a { color: #0056b3; font-weight: 600; text-decoration: none; }
         .warning-box ul { padding-left: 20px; margin: 10px 0 0 0; }
         
-        /* START: === MODIFIED STYLES FOR TOOLS PAGE === */
+        /* === TOOLS PAGE STYLES === */
         #page-tools {
-            color: #e0e0e0;
-            padding: 0;
-            position: relative;
+            color: #e0e0e0; padding: 0; position: relative;
         }
         .tools-header {
-            background-color: #008080; /* Teal background */
-            padding: 12px 15px;
+            background-color: #008080; padding: 12px 15px;
             position: sticky; top: 0; z-index: 10;
-            display: flex; /* Changed */
-            justify-content: space-between; /* Changed */
-            align-items: center; /* Changed */
+            display: flex; justify-content: space-between; align-items: center;
             border-bottom: 1px solid #004d4d;
         }
         .tools-page-title {
-            font-family: 'VT323', monospace;
-            font-size: 24px;
-            letter-spacing: 2px;
-            color: white;
-            margin: 0;
+            font-family: 'VT323', monospace; font-size: 24px; letter-spacing: 2px;
+            color: white; margin: 0;
         }
-        #page-tools .search-bar .search-icon {
-            fill: rgba(255, 255, 255, 0.6);
-        }
+        #page-tools .search-bar .search-icon { fill: rgba(255, 255, 255, 0.6); }
         #tool-search-input {
-             background-color: rgba(0, 0, 0, 0.25);
-             border: 1px solid rgba(255, 255, 255, 0.25);
-             border-radius: 20px; height: 36px;
-             padding: 0 15px 0 40px; color: white;
-             font-family: 'Poppins', sans-serif; font-size: 14px;
-             width: 140px; transition: all 0.3s ease;
+             background-color: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.25);
+             border-radius: 20px; height: 36px; padding: 0 15px 0 40px; color: white;
+             font-family: 'Poppins', sans-serif; font-size: 14px; width: 140px; transition: all 0.3s ease;
         }
         #tool-search-input::placeholder { color: rgba(255, 255, 255, 0.5); }
         #tool-search-input:focus {
              outline: none; border-color: rgba(255, 255, 255, 0.6);
              box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
         }
-        .tools-list {
-            list-style: none;
-            padding: 0 10px;
-            margin: 0;
-        }
+        .tools-list { list-style: none; padding: 0 10px; margin: 0; }
         .tool-item {
-            display: flex;
-            align-items: center;
-            padding: 15px 10px;
-            border-bottom: 1px solid #2a2a2a;
-            cursor: pointer;
+            display: flex; align-items: center; padding: 15px 10px;
+            border-bottom: 1px solid #2a2a2a; cursor: pointer;
         }
         .tool-item:last-child { border-bottom: none; }
-        .tool-icon {
-            width: 32px; height: 32px;
-            margin-right: 20px; object-fit: contain;
+        .tool-icon { width: 32px; height: 32px; margin-right: 20px; object-fit: contain; }
+        .tool-name { font-size: 18px; font-family: 'Poppins', sans-serif; font-weight: 500; }
+
+        /* START: === PREMIUM PAGE STYLES === */
+        #page-more {
+            padding: 15px;
         }
-        .tool-name {
-            font-size: 18px;
+        
+        .premium-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 10px 0;
+            margin-bottom: 30px;
+        }
+        .grid-action-button {
+            background-color: #FF0116; /* Purple color from image */
+            color: white;
+            text-decoration: none;
+            padding: 10px 10px; /* **SIZE CHANGE**: Was 20px 10px */
+            border-radius: 12px;
+            font-size: 14px; /* **SIZE CHANGE**: Was 16px */
+            font-weight: 600;
             font-family: 'Poppins', sans-serif;
-            font-weight: 500;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(142, 68, 173, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        /* END: === MODIFIED STYLES FOR TOOLS PAGE === */
+        .grid-action-button:active {
+            transform: translateY(2px) scale(0.98);
+            box-shadow: 0 2px 5px rgba(142, 68, 173, 0.4);
+        }
+        
+        /* New class to center the last button if it's alone in a row */
+        .full-width-button {
+            grid-column: 1 / -1; /* This makes the item span across both columns */
+            justify-self: center; /* This centers the item within the grid area */
+            width: 50%; /* Adjust width so it doesn't look too wide */
+        }
+
+        /* Accordion Styles */
+        .accordion-container {
+            margin-top: 10px;
+        }
+        .accordion-header {
+            background-color: #ffffff;
+            color: #444;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            margin-bottom: 15px;
+        }
+        .accordion-arrow {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease-in-out;
+            color: #555;
+        }
+        .accordion-header.active .accordion-arrow {
+            transform: rotate(90deg);
+        }
+        .accordion-content {
+            padding: 0 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: transparent;
+        }
+        #page-more .post-title {
+            font-family: 'Playpen Sans Arabic', sans-serif;
+            font-size: 14px;
+            color: #333;
+            text-shadow: none;
+            margin-bottom: -6px;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+        /* END: === PREMIUM PAGE STYLES === */
 
         /* === EXIT POP-UP (MODAL) STYLES === */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: none; justify-content: center; align-items: center; z-index: 10002; }
@@ -272,7 +332,7 @@
             <h3 class="guide-title">How to Download from sfl.gl: Watch the Video</h3>
             <div class="video-thumbnail">
                 <img src="https://www.veed.io/view/8863c60e-6a52-4367-9f89-c38903a3a02e?panel=share" alt="Video Thumbnail">
-                <div class="play-button-overlay"><svg xmlns="https://www.veed.io/view/8863c60e-6a52-4367-9f89-c38903a3a02e?panel=share" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></div>
+                <div class="play-button-overlay"><svg xmlns="http://www.veed.io/view/8863c60e-6a52-4367-9f89-c38903a3a02e?panel=share" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></div>
             </div>
         </div>
         <div class="guide-section">
@@ -329,17 +389,72 @@
         <article class="post"> <a href="https://openinapp.link/ot34e" class="post-link"> <h2 class="post-title">BODY HEADSHOT - ASSETINDEXER</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxYpcWp8RoZhKcaWMp9TjL3VWqRPvDiBhPDEo6CLUEskBtPcjCVAQ0zkZsjMnDGdghBS9A6TQQtXBfLNNIL9BhLxkWl11pPzzdMqO-sjUagqVac0qJueFvSMRA-b8iqYcV5LGZ83HMP02VAjzV1kS_wZ1m7CvZBm_08S8aciBXmYCL-qF9YGgxkKn8/s1280/how_to_make_body_headshot_con.png" alt="Post Image" class="post-image"> </a> </article>        
     </div>
 
-    <!-- Page 3: More Page -->
-    <div id="page-more" class="page-container page-content-old">
-        <header class="header"><h1>Premium</h1></header>
-        <ul class="link-list">
-            <li><a href="#" target="_blank">Coming Soon</a></li>
-        </ul>
+    <!-- Page 3: More Page (Premium) - MODIFIED -->
+    <div id="page-more" class="page-container">
+        
+        <div class="premium-grid-container">
+            <a href="#" target="_blank" class="grid-action-button">Payment Proofs</a>
+            <a href="#" target="_blank" class="grid-action-button">Feedbacks</a>
+            <a href="#" id="refund-policy-btn" class="grid-action-button">Refund Policy</a>
+            <a href="https://t.me/arisu9661" target="_blank" class="grid-action-button">24/7 Support</a>
+            <!-- NEW BUTTON ADDED & CENTERED -->
+            <a href="#" id="how-to-purchase-btn" class="grid-action-button full-width-button">How To Purchase</a>
+        </div>
+
+        <div class="accordion-container">
+            <!-- Accordion Item 1 -->
+            <div class="accordion-header">
+                <span>Config File</span>
+                <svg class="accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </div>
+            <div class="accordion-content">
+                <!-- Posts will go here -->
+                <article class="post"> <a href="#" class="post-link"> <h2 class="post-title">PREMIUM CONFIG V1 - AIMBOT</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKGMtTnUz0j4gEvMJJwdBcZDlFSrXlwkr4uRvlKpOq1Gbd_7tQSLf5XfEIB4xKlS45u8WqcDdH-SqAmXHXnPqt7XDLGaMxI363OO7lDzvObrDTXuw5DnfJ8z9xOpgnwmoN1ivIXrVyIpYg871zMoxhWgcU-qrAvz-kh4zwsOyYs1sUf2O3HmkNDRfN/s1920/Picsart_25-05-25_15-43-26-708.jpg" alt="Post Image" class="post-image"> </a> </article>
+                <article class="post"> <a href="#" class="post-link"> <h2 class="post-title">PREMIUM CONFIG V2 - WALLHACK</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjytYRSsOibjaObD-nqOnX4Jyw2zsfsc0HDHPneobpuwCoct4m6S6-CgZesOjv1qtVq46XjqlIBR7dgYO5adKTdX-mQU3W7ixrzY6iKC7fjVsNlu6Hr-0dmNH3BfUdz-xVyBx12FDXcN_HxfRvKxOJjaVfNfatBYqo_DxV_zsdMHwlhrCGJb9BJDb7O/s3264/Picsart_25-05-27_10-41-07-181.jpg" alt="Post Image" class="post-image"> </a> </article>
+            </div>
+
+            <!-- Accordion Item 2 (Example) -->
+            <div class="accordion-header">
+                <span>VIP Scripts</span>
+                <svg class="accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </div>
+            <div class="accordion-content">
+                 <p style="text-align: center; color: #555; padding: 20px 0;">Coming Soon...</p>
+            </div>
+        </div>
     </div>
     
-    <!-- START: === MODIFIED TOOLS PAGE === -->
+    <!-- NEW PAGE: How To Purchase -->
+    <div id="page-how-to-purchase" class="page-container">
+        <div class="guide-section">
+            <h1 style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 700;">How To Purchase</h1>
+            <div class="guide-progress-bar"><div class="fill"></div></div>
+        </div>
+        <div class="guide-section">
+            <h3 class="guide-title">Purchase Process</h3>
+            <p style="font-size: 14px; color: #555; line-height: 1.6;">
+                Premium products khareedne ke liye, neeche diye gaye steps follow karein. Payment karne ke baad aapko product access turant mil jayega. Agar koi problem aati hai toh 24/7 support par contact karein.
+            </p>
+        </div>
+        <div class="guide-section">
+            <h3 class="guide-title">Step-by-Step Video Guide</h3>
+            <div class="video-thumbnail" onclick="alert('Video will be added soon!')">
+                <!-- Replace the src with your actual video thumbnail image -->
+                <img src="https://i.ytimg.com/vi/b3_lVSrPB6w/maxresdefault.jpg" alt="How to Purchase Video Thumbnail">
+                <div class="play-button-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+                </div>
+            </div>
+        </div>
+         <div class="warning-box">
+            <p><span class="icon">💳</span> UPI Payment Is Available Only For India, For Other Countries Binance, Cryptocurrency (USDT,BTC etc).
+            <br><br>
+            Kisi bhi sahayata ke liye, Telegram par sampark karein: <a href="https://t.me/arisu9661" target="_blank">t.me/arisu9661</a></p>
+        </div>
+    </div>
+
+    <!-- TOOLS PAGE -->
     <div id="page-tools" class="page-container">
-        <!-- MODIFIED: Header now has title on left and search bar on right -->
         <header class="tools-header">
             <h1 class="tools-page-title">Tools</h1>
             <div class="search-bar">
@@ -347,7 +462,6 @@
                 <input type="text" id="tool-search-input" placeholder="Search tools...">
             </div>
         </header>       
-
         <ul class="tools-list">
             <li class="tool-item" data-url="https://openinapp.link/qo4uk"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaWg3NftuScWfS58HvAK_-kHMJ00CO86LvZrTM5hYloDJ06VoZHAlB-YfwVYr9wx0f1H_pn26NNFL45AU999F_boZy49wY9w32l5jb9cNlg7uPf41LtjrPIstPx_VAAoHScSBRp9JWjy8ZPWwieLcp8_I-v-ZrZAi18V9GhQRImKG_aJabhhu02Fr5/s1080/1000549253.png" alt="icon" class="tool-icon"><span class="tool-name">CONFIG & OBB EDITOR</span></li>
             <li class="tool-item" data-url="https://openinapp.link/yj7qc"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrfWtSmFBtzXjujOrabKhKr90Npv-GdSWnJgkcKMTlT2CXfa2KIW3y-UAVrCAXgPShDS1mCZ5Cfv-O1JlSS0oSMxc5w0epeR3m97whlEGgtrBiRo3iANNhakRmY92av-3v1ZzIteRHPBYtJ1v7hJ5SNJw7OhJrSuTsCBArWFtT1_SjXr-wPKEQvcHh/s150/MT%20Manager.png" alt="icon" class="tool-icon"><span class="tool-name">MT MANAGER</span></li>
@@ -361,11 +475,8 @@
             <li class="tool-item" data-url="https://openinapp.link/7z1e0"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAyp1RpT33cFds1ggN2BEbg2CqIvEFg_YReiJclfgIhore9Zu7O0GucRlge_v3638cjnxa78ETp8DcYj3mOINVGl0dPK5uVZVQx_KH8RL_5YORcMHivLAZfwS_fC9Nv0SiqQBREmY6bmzM0UJSqAEDYZiwlhq8g8HqidRNtp3iRSZucwLihaxpFbMx/s150/Andlua%206.8.png" alt="icon" class="tool-icon"><span class="tool-name">ANDLUA+ (6.8)</span></li>
             <li class="tool-item" data-url="https://openinapp.link/7z1e0"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSdADbzh1LXvV5fRWUMAKHOvRs3Annd7zyTjjIyj9WTaSw5RGTul0F0LFSJSCmdrO-Q5Wty98_QTdTGxc1MN6QLjFDvsnXMvebj87AWXqBbI1dcEFu39eaag8Tc9l0zs0rs0s1R9mHQZ4Bps7Uz5YLUoqhOZKKY7jFHeaLsOZODhxUoukzX7fqR47C/s150/Andlua%207.0.png" alt="icon" class="tool-icon"><span class="tool-name">ANDLUA+ (7.0)</span></li>
             <li class="tool-item" data-url="https://openinapp.link/grzb9"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPUZJKyCDikTH9Sh4QNnkju4UVAU0EOhsPoaHS5BKNWcdLsE7_stCao6y3CQUrWshdFIR85y0yOVGrqKYBeuNT_5nM02mLp2z6w5t3-D8F2ErQ6f0EqhMorNsN3ZjqSHUn7SOHWedq3wvexTXk4UbgNuTR32MzxrWoD9F6t-aP6aSIFlkhicfAeoYg/s150/ZArchiver.png" alt="icon" class="tool-icon"><span class="tool-name">ZARCHIVER</span></li>
-            
         </ul>
     </div>
-    <!-- END: === MODIFIED TOOLS PAGE === -->
-
 
     <!-- Page 4: About Page -->
     <div id="page-about" class="page-container">
@@ -436,16 +547,32 @@
             
             navItems.forEach(n => n.classList.remove('active'));
 
-            const navItem = document.querySelector(`.nav-item[data-page="${pageId}"]`);
+            let navItem = document.querySelector(`.nav-item[data-page="${pageId}"]`);
             let newGradientClass;
 
             if (navItem) {
                 navItem.classList.add('active');
                 newGradientClass = navItem.dataset.gradientClass;
             } else {
-                document.querySelector(`.nav-item[data-page="home"]`).classList.add('active');
-                if (pageId === 'guide') { newGradientClass = 'bg-gradient-guide'; }
-                if (pageId === 'tools') { newGradientClass = 'bg-gradient-tools'; }
+                // If no direct nav-item, default to a suitable one or none
+                if (pageId === 'more' || pageId === 'how-to-purchase') {
+                    navItem = document.querySelector('.nav-item[data-page="more"]');
+                    if(navItem) navItem.classList.add('active');
+                } else {
+                     navItem = document.querySelector('.nav-item[data-page="home"]');
+                     if(navItem) navItem.classList.add('active');
+                }
+                
+                // Set gradient based on pageId
+                if (pageId === 'guide' || pageId === 'how-to-purchase') { 
+                    newGradientClass = 'bg-gradient-guide'; 
+                } else if (pageId === 'tools') { 
+                    newGradientClass = 'bg-gradient-tools'; 
+                } else if (pageId === 'more') {
+                    newGradientClass = 'bg-gradient-more';
+                } else {
+                    newGradientClass = 'bg-gradient-home';
+                }
             }
             
             body.classList.remove(...gradientClasses);
@@ -472,6 +599,16 @@
             }
         });
         document.getElementById('guide-button').addEventListener('click', function(e) { e.preventDefault(); switchPage('guide'); });
+
+        // **NEW** Event listener for the "How To Purchase" button
+        const howToPurchaseBtn = document.getElementById('how-to-purchase-btn');
+        if (howToPurchaseBtn) {
+            howToPurchaseBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchPage('how-to-purchase');
+            });
+        }
+
 
         // --- EXIT MODAL LOGIC ---
         const exitModal = document.getElementById('exit-modal');
@@ -533,7 +670,7 @@
             document.body.removeChild(textArea);
         }
 
-        const postLinks = document.querySelectorAll('#page-posts .post-link');
+        const postLinks = document.querySelectorAll('#page-posts .post-link, #page-more .post-link');
         postLinks.forEach(link => {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -558,7 +695,7 @@
             });
         });
 
-        // --- NEW: TOOL SEARCH FILTER LOGIC ---
+        // --- TOOL SEARCH FILTER LOGIC ---
         const toolSearchInput = document.getElementById('tool-search-input');
         if (toolSearchInput) {
             toolSearchInput.addEventListener('input', function() {
@@ -568,10 +705,38 @@
                     const nameElement = tool.querySelector('.tool-name');
                     if (nameElement) {
                         const nameText = nameElement.textContent.toLowerCase();
-                        // Use 'flex' because the items are display:flex
                         tool.style.display = nameText.includes(searchTerm) ? 'flex' : 'none';
                     }
                 });
+            });
+        }
+        
+        // --- ACCORDION LOGIC ---
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null; // Collapse
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px'; // Expand
+                }
+            });
+        });
+
+        // --- REFUND POLICY ALERT ---
+        const refundButton = document.getElementById('refund-policy-btn');
+        if (refundButton) {
+            refundButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the link from being followed
+                alert(
+                    'Refund Policy:\n\n' +
+                    '1. All sales of digital products are final.\n' +
+                    '2. No refunds will be issued once a product is downloaded or accessed.\n' +
+                    '3. If you experience a technical issue, please contact support for assistance.\n\n' +
+                    'By making a purchase, you agree to these terms.'
+                );
             });
         }
 
