@@ -30,7 +30,6 @@
         .bg-gradient-posts { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
         .bg-gradient-more { background: linear-gradient(135deg, #3a6186, #89253e); }
         .bg-gradient-about { background: linear-gradient(to top, #141e30, #243b55); }
-        .bg-gradient-tools { background-color: #1a1a1a; } /* NEW: Background for Tools page */
 
         /* === SPLASH SCREEN STYLES === */
         #splash-screen {
@@ -92,11 +91,10 @@
         /* STYLES for Header with Search Bar */
         .header-content { display: flex; justify-content: space-between; align-items: center; }
         .search-bar { position: relative; }
-        .search-bar .search-icon { position: absolute; top: 50%; left: 12px; transform: translateY(-50%); width: 18px; height: 18px; pointer-events: none; }
+        .search-bar .search-icon { position: absolute; top: 50%; left: 12px; transform: translateY(-50%); width: 18px; height: 18px; fill: rgba(255, 255, 255, 0.7); pointer-events: none; }
         #post-search-input { background-color: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 20px; height: 36px; padding: 0 15px 0 40px; color: white; font-family: 'Poppins', sans-serif; font-size: 14px; width: 140px; transition: all 0.3s ease; }
         #post-search-input::placeholder { color: rgba(255, 255, 255, 0.5); }
         #post-search-input:focus { outline: none; border-color: rgba(255, 255, 255, 0.7); box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); }
-        #page-posts .search-bar .search-icon { fill: rgba(255, 255, 255, 0.7); }
 
         /* === ABOUT PAGE STYLES === */
         #page-about { display: none; padding: 40px 15px 0 15px; }
@@ -125,6 +123,9 @@
         #page-guide { padding: 15px; }
         .guide-section { margin-bottom: 25px; }
         .guide-title { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 16px; color: #4a4a4a; margin: 0 0 10px 0; }
+        .language-select-box { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 10px 15px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .language-select-box .text { font-weight: 500; color: #333; }
+        .language-select-box .google-g { background: conic-gradient(from -45deg, #4285f4 0 90deg, #34a853 90deg 180deg, #fbbc05 180deg 270deg, #ea4335 270deg 360deg); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: bold; font-size: 20px; margin-right: 10px; }
         .guide-progress-bar { width: 100%; height: 4px; background-color: #e0e0e0; border-radius: 4px; overflow: hidden; margin-top: 15px; }
         .guide-progress-bar .fill { width: 100%; height: 100%; background: linear-gradient(90deg, #8e2de2, #4a00e0); }
         .video-thumbnail { position: relative; cursor: pointer; }
@@ -136,68 +137,6 @@
         .warning-box a { color: #0056b3; font-weight: 600; text-decoration: none; }
         .warning-box ul { padding-left: 20px; margin: 10px 0 0 0; }
         
-        /* START: === MODIFIED STYLES FOR TOOLS PAGE === */
-        #page-tools {
-            color: #e0e0e0;
-            padding: 0;
-            position: relative;
-        }
-        .tools-header {
-            background-color: #008080; /* Teal background */
-            padding: 12px 15px;
-            position: sticky; top: 0; z-index: 10;
-            display: flex; /* Changed */
-            justify-content: space-between; /* Changed */
-            align-items: center; /* Changed */
-            border-bottom: 1px solid #004d4d;
-        }
-        .tools-page-title {
-            font-family: 'VT323', monospace;
-            font-size: 24px;
-            letter-spacing: 2px;
-            color: white;
-            margin: 0;
-        }
-        #page-tools .search-bar .search-icon {
-            fill: rgba(255, 255, 255, 0.6);
-        }
-        #tool-search-input {
-             background-color: rgba(0, 0, 0, 0.25);
-             border: 1px solid rgba(255, 255, 255, 0.25);
-             border-radius: 20px; height: 36px;
-             padding: 0 15px 0 40px; color: white;
-             font-family: 'Poppins', sans-serif; font-size: 14px;
-             width: 140px; transition: all 0.3s ease;
-        }
-        #tool-search-input::placeholder { color: rgba(255, 255, 255, 0.5); }
-        #tool-search-input:focus {
-             outline: none; border-color: rgba(255, 255, 255, 0.6);
-             box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
-        }
-        .tools-list {
-            list-style: none;
-            padding: 0 10px;
-            margin: 0;
-        }
-        .tool-item {
-            display: flex;
-            align-items: center;
-            padding: 15px 10px;
-            border-bottom: 1px solid #2a2a2a;
-            cursor: pointer;
-        }
-        .tool-item:last-child { border-bottom: none; }
-        .tool-icon {
-            width: 32px; height: 32px;
-            margin-right: 20px; object-fit: contain;
-        }
-        .tool-name {
-            font-size: 18px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-        }
-        /* END: === MODIFIED STYLES FOR TOOLS PAGE === */
-
         /* === EXIT POP-UP (MODAL) STYLES === */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: none; justify-content: center; align-items: center; z-index: 10002; }
         .modal-overlay.active { display: flex; }
@@ -242,7 +181,7 @@
     <div id="page-home" class="page-container active">
         <div class="top-buttons-container">
             <a href="#" class="top-button" id="guide-button">Guide</a>
-            <a href="#" class="top-button"><span class="new"></span>Beta Version</a>
+            <a href="#" class="top-button"><span class="new">*</span> What's New</a>
         </div>
         <div class="main-card">
             <h1 class="title">STORE</h1>
@@ -250,18 +189,22 @@
             <div class="icon-grid">
                 <div class="grid-item" data-target-tab="posts"><div class="icon-bg icon-virtual"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.12-1.588H6.88a2.25 2.25 0 00-2.12 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z" /></svg></div><p>Resources</p></div>
                 <div class="grid-item" data-target-tab="more"><div class="icon-bg icon-virtualgg"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg></div><p>Premium</p></div>
-                <div class="grid-item" data-target-tab="tools"><div class="icon-bg icon-vm"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg></div><p>Tools</p></div>
+                <div class="grid-item" data-target-tab="posts"><div class="icon-bg icon-vm"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg></div><p>Tools</p></div>
                 <a href="https://yt.oia.bio/Hil" target="_blank" class="grid-item"><div class="icon-bg icon-apk"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008v-.008z" /></svg></div><p>Tutorials</p></a>
                 <div class="grid-item" data-target-tab="about"><div class="icon-bg icon-vpn"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286z" /></svg></div><p>About Me</p></div>              
             </div>
         </div>
-        <a href="#" class="donate-button">FREE PANEL</a>
+        <a href="#" class="donate-button">Donate Virtual</a>
         <p class="footer-text">Keep It Here: No Sharing, No Reuploads</p>
     </div>
 
     <!-- GUIDE PAGE (RESTORED) -->
     <div id="page-guide" class="page-container">
-        <div class="guide-section">   
+        <div class="guide-section">
+            <div class="language-select-box">
+                <span class="text"><span class="google-g">G</span> Select Language</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
+            </div>
             <div class="guide-progress-bar"><div class="fill"></div></div>
         </div>
         <div class="guide-section">
@@ -271,30 +214,30 @@
         <div class="guide-section">
             <h3 class="guide-title">How to Download from sfl.gl: Watch the Video</h3>
             <div class="video-thumbnail">
-                <img src="https://www.veed.io/view/8863c60e-6a52-4367-9f89-c38903a3a02e?panel=share" alt="Video Thumbnail">
-                <div class="play-button-overlay"><svg xmlns="https://www.veed.io/view/8863c60e-6a52-4367-9f89-c38903a3a02e?panel=share" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></div>
+                <img src="https://i.imgur.com/GzQ5U1n.png" alt="Video Thumbnail">
+                <div class="play-button-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></div>
             </div>
         </div>
         <div class="guide-section">
-            <h3 class="guide-title">Choose an Item according to the category</h3>
+            <h3 class="guide-title">Choose an app according to the category</h3>
             <div class="main-card">
                 <h1 class="title">STORE</h1>
                 <p class="subtitle">Free Finds & Premium Picks<br>All in One Place !!</p>
                 <div class="icon-grid">
                     <div class="grid-item" data-target-tab="posts"><div class="icon-bg icon-virtual"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.12-1.588H6.88a2.25 2.25 0 00-2.12 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z"></path></svg></div><p>Resources</p></div>
                     <div class="grid-item" data-target-tab="more"><div class="icon-bg icon-virtualgg"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg></div><p>Premium</p></div>
-                    <div class="grid-item" data-target-tab="tools"><div class="icon-bg icon-vm"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"></path></svg></div><p>Tools</p></div>
+                    <div class="grid-item" data-target-tab="posts"><div class="icon-bg icon-vm"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"></path></svg></div><p>Tools</p></div>
                     <a href="https://yt.oia.bio/Hil" target="_blank" class="grid-item"><div class="icon-bg icon-apk"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008v-.008z"></path></svg></div><p>Tutorials</p></a>
-                <div class="grid-item" data-target-tab="about"><div class="icon-bg icon-vpn"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286z" /></svg></div><p>About Me</p></div>              
+                    <div class="grid-item" data-target-tab="about" style="grid-column: 1 / -1;"><div class="icon-bg icon-vpn"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286z"></path></svg></div><p>About Me</p></div>
                 </div>
             </div>
             <div class="warning-box">
-                <p><span class="icon">⚠️</span>Please don't share any tools, code, or files from the ARISU GPT app. If you want others to get it, just give them the official link or tell them to install the ARISU GPT app:</p>
+                <p><span class="icon">⚠️</span>Sharing mod apps from the Guanyin app is not allowed. If you want to share or reupload, please only use the original link or simply share the Guanyin app:</p>
                 <ul>
-                    <li><a href="https://youtube.com/@hackinjectlab" target="_blank">Visit Youtube Channel</a></li>
-                    <li><a href="https://t.me/hackinjectlab" target="_blank">Join Telegram Channel</a></li>
+                    <li><a href="#" target="_blank">guanyinlite.surge.sh</a></li>
+                    <li><a href="#" target="_blank">bit.ly/guanyinlite2</a></li>
                 </ul>
-                <p>Report broken links to Telegram:<br><a href="https://t.me/arisu9661" target="_blank">t.me/arisu9661</a></p>
+                <p>Report broken links to Telegram:<br><a href="#" target="_blank">t.me/arisu9661</a></p>
             </div>
         </div>
     </div>
@@ -311,61 +254,22 @@
             </div>
         </header>
         <article class="post"> <a href="https://sfl.gl/pzV6" class="post-link"> <h2 class="post-title">VIRTUAL SETUP V4 - MULTI CLONER</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQUSL5c7ZE0zUvcMIg_vnVUL5XjsNmpVLTjXYMedz4UQrFEcGJ1RBWaxlB6v1GYJWMDxpOfETQL1deOwsGOcvUNNE_hHNP1rrh0r9707Ap3p-yQeAmhww0pKug4RkVbQYICGpLo43Vv5QigDUxMssC1QU2U4-_z73HC5akYxXVlyCj-YuwAbLsOzfo/s1280/1000499834.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/f7SwUEz" class="post-link"> <h2 class="post-title">FIX GUEST ID LOGIN PROBLEM - X</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ1yzErkep3oQQsRpjInAoOScDlnzMj34nFztKwzg3WSDVI8zDox82wrUz6Q88xW51VF7K8Jl51WlsXk-HdrKHwNZj7vz3kfnsvJ0DTkjGuI8tdomRdImku5fnd9JTjQN4lelHJL43OPU_nBco6NDOhnI7XlD2MlF07CBZp_x8V3_kA_zpc7-hRZcT/s1920/1000499401.png" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/ATp8c" class="post-link"> <h2 class="post-title">VIRTUAL SETUP V3 - PLAYBOX</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhFsYYQVB2b5hc_cIfDLVWHDHz0evCYTPcvW5LIQdu6faekjTkJLvw_zgKYVvrZFKNbVSWqC7DukFvnv1bdItm7giS8akttSx_KATVCQPa1FSx-RWHefvQx49U-VQLWLEeuddO2LL-bTAAoo3FHv54VY_AHD8NTkThQmuUuTQB2qEmPVUNLEESygBY/s1280/1000496112.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/ne3pt" class="post-link"> <h2 class="post-title">LOGIN FUNCTION CODING - ANDLUA+</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6oJeghAIcD2ILIb4ZO98prvmb8Co_x2313wzE44BS78Za4mXG9S24kl4EQyPsXI9KexZzHW9mkwmEtP5W2ia2t4PBvFmhqIXS05zpWD_PZ6s-kj4RMvGlzOBIupFUodOMkvoHqqn3TRazsqr5RrYE2ZOQVLCrSpbrf33tSYBoiNaiLoN8rRci4ftv/s1920/1000495509.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/uDcT" class="post-link"> <h2 class="post-title">ALL MISTAKES SOLVE - PROBLEMS</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg3283YYaNBSXdal5_n1QieTmRIV9mYAStThPiTOwwlql0mo-QoJFUht4_Lx3SHU275viIHHTt7fXQo5VCQVoRWY3FUZUuUrJB5zRjI-rI39pBluasGLSJFvJ1-Pm9IrcofoiSa29r9kf__nI8bBlMiwiwMQAkZf4AjjBTseZXoHRenF5UPjSr2cl2/s1920/1000494897.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/r9ew3" class="post-link"> <h2 class="post-title">EXPIRY DATE CODING - ANDLUA+ </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnZRzsJgusWfzAPgo1tgDi2VK6PsL_zTBEIeQp6Lg3uWOc-mDN38PDZg1naHtkZVT2hu5bOI1nbOrI-jwNzm290yiPQt0stKxbAQCGNexGMmQaMghSZ_QAwY5uYaXQwvKX98IXB_oaVhmif4eOP4sh-asdhZjBGgJhgZio1Q2ZghT9Th8sQQhp4qK6/s1920/1000433368.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/4u9e6" class="post-link"> <h2 class="post-title">CONFIG RUN CODING - ANDLUA+ </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglSHVEAhyCmOZqLMRxPSuhcUpn4EnuySaGg9BTF_70d2q7YTr_qn5saLXJfEa2x6zDQAi7VaSSMjW7RJ-IQL4fNqTU-FZsxho7FAY4dkrYK9PMWakOlsKl44XiScrDRdmCbJhnaaFbmdl1zv-QXSfq4-v9QINMy67fvxOioR1hd7SkrJdwPyhXtBkT/s1920/Picsart_25-06-12_22-27-42-739.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/xbl2g" class="post-link"> <h2 class="post-title">NEW ALP PROJECT E1 - ANDLUA+ </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsupc_t6crXDnFPu6pnzmuDuSggm0BDpqAu1SytdVnZTtaOE5nXhlp7nxHfaT-P1ucEsLNZhQU6WpPyP6CrZtDmHsue9r5wmlaDpsrO0SAdo8YeZpcevCZfjq5UvNcIa3L7VHwbZNeDbEgH5bIIZp5nPEpcIXUzlT9TzT2OD5oo0uFpOE6xt5CXw0u/s1920/Picsart_25-06-12_10-55-47-292.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/Xu6C" class="post-link"> <h2 class="post-title">VIRTUAL SETUP V2 - CLONE MASTER </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo6PKMqbqKJGPmIoUlx7Bh3-hZVp4Kc_EjrBrGOhnX8yKYa39CyNT6xjRfPX6AAJMaBNSrDKSpBCyVMgLcEi2lsdQgwKVDEsiJtRGe-IEMICSdRBuyO8aI5rumAB3h1pBYXi8hyphenhyphenq2-KRVbmGw_VSyyuoho0GAtgUQmFfGIXtUzXEgKcpszP254Nus2/s1920/Picsart_25-06-10_16-44-58-005.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/Xu6C" class="post-link"> <h2 class="post-title">VIRTUAL SETUP V1 - CLONE MASTER </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFAKcyXE1A2MRB7U7eouXqnS-7DSL7Wnn2KsZqTb0dmFZPYVw3yQY1vXTt81WC69xldZ6IfxvknSG1QFh03YHxvKT_FwMHvZ_jnlyuBLED3AsbKx0U511cE_d-j2CeZJiN9UPLJrLZM7xIDdiB6AKNkQm76hNlaCoobCNINAWpGJf7zCX0RQIvpKEu/s1920/Picsart_25-06-07_07-28-56-365.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/ncqls" class="post-link"> <h2 class="post-title">PC/3D HOLOGRAM CODING - GREEN</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWjIziysfJaUg-EdaIoM9BcIfi_GO3xt1K-GHLF5zOQWySh7sXeC0k9CiVilJOX59QAw097l1ygZkUglmJ3ywnhdVZiwqrlHD19wbHuq613KjRviMpIew8uUOxdA6TlsUPxtMll50T3okMsiSBJntXAxjXJIErmmBXIFk2trshhhUAG2kvxTnekf90/s1280/1000549150.png" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/i4wfw" class="post-link"> <h2 class="post-title">DOWNLOAD FAILED - DUAL SPACE</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyj4TiwbFWyfpgGU7Y6fWd5Ldqdh2TcTXynsEPkVzTnoC2C1t8zfWuupHBHYniJHsmZFlyGVlySICTniAHTfs55MEy12PFvaaT09xxuNH622bA8P3wu-DIQqwuPecSpQWUKsyQZrSC7ZUhjZPBIMOwTiiqhCJkRdEKZMnvC1de27bJWrM74Grwe7a2/s1280/1000549013.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/z1579" class="post-link"> <h2 class="post-title">MAGIC BULLET CODING - CACHE</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_nH_pZg59t08QZFLarO6Lx-dTgEZR16RSs6_ndUktOPNLFVCQA-OSF5VyHdZvzclUXQzAmvFmBaRgWBEVQPGn6XWYKmQgZxBqXgFjeUhyphenhyphenNtoggNCfaLxhd-qiLcFfSGPp1yXrtSww44qZ55AdXOtIS27TY2Q4xFZ2rhNDMN8icOz9SUxSxt4w5TJd/s1920/Picsart_25-05-31_11-11-24-712.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/qjr4f" class="post-link"> <h2 class="post-title">BODY HEADSHOT CODING - CACHE </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjF4kBBcZYrLDyL1CDV5thk1-NfSDhfP0iYxJhEMHhJtWBNroV4MD2UqxdiNMJVawy-WewLuhw0kI_MEytz2K90Lmkxf4T30dpXNuYw-ImXPXzTpgyNjlGts3cMEf-rZxBPLqkPQ3FUl-nOliksD-n8-q6ESDZ0OXLdJbvwmWadDIexvoSmKmtapzG1/s1920/Picsart_25-05-30_11-28-05-108.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/npxjb" class="post-link"> <h2 class="post-title">DRAG HEADSHOT CODING - CACHE </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjytYRSsOibjaObD-nqOnX4Jyw2zsfsc0HDHPneobpuwCoct4m6S6-CgZesOjv1qtVq46XjqlIBR7dgYO5adKTdX-mQU3W7ixrzY6iKC7fjVsNlu6Hr-0dmNH3BfUdz-xVyBx12FDXcN_HxfRvKxOJjaVfNfatBYqo_DxV_zsdMHwlhrCGJb9BJDb7O/s3264/Picsart_25-05-27_10-41-07-181.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/csx37" class="post-link"> <h2 class="post-title">HAND ANTENNA - ASSETINDEXER </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKGMtTnUz0j4gEvMJJwdBcZDlFSrXlwkr4uRvlKpOq1Gbd_7tQSLf5XfEIB4xKlS45u8WqcDdH-SqAmXHXnPqt7XDLGaMxI363OO7lDzvObrDTXuw5DnfJ8z9xOpgnwmoN1ivIXrVyIpYg871zMoxhWgcU-qrAvz-kh4zwsOyYs1sUf2O3HmkNDRfN/s1920/Picsart_25-05-25_15-43-26-708.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/ot34e" class="post-link"> <h2 class="post-title">BODY HEADSHOT - ASSETINDEXER</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxYpcWp8RoZhKcaWMp9TjL3VWqRPvDiBhPDEo6CLUEskBtPcjCVAQ0zkZsjMnDGdghBS9A6TQQtXBfLNNIL9BhLxkWl11pPzzdMqO-sjUagqVac0qJueFvSMRA-b8iqYcV5LGZ83HMP02VAjzV1kS_wZ1m7CvZBm_08S8aciBXmYCL-qF9YGgxkKn8/s1280/how_to_make_body_headshot_con.png" alt="Post Image" class="post-image"> </a> </article>        
+        <article class="post"> <a href="https://example.com/link-for-guest-id" class="post-link"> <h2 class="post-title">FIX GUEST ID LOGIN PROBLEM - X</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ1yzErkep3oQQsRpjInAoOScDlnzMj34nFztKwzg3WSDVI8zDox82wrUz6Q88xW51VF7K8Jl51WlsXk-HdrKHwNZj7vz3kfnsvJ0DTkjGuI8tdomRdImku5fnd9JTjQN4lelHJL43OPU_nBco6NDOhnI7XlD2MlF07CBZp_x8V3_kA_zpc7-hRZcT/s1920/1000499401.png" alt="Post Image" class="post-image"> </a> </article>
+        <article class="post"> <a href="https://example.com/link-for-playbox" class="post-link"> <h2 class="post-title">VIRTUAL SETUP V3 - PLAYBOX</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhFsYYQVB2b5hc_cIfDLVWHDHz0evCYTPcvW5LIQdu6faekjTkJLvw_zgKYVvrZFKNbVSWqC7DukFvnv1bdItm7giS8akttSx_KATVCQPa1FSx-RWHefvQx49U-VQLWLEeuddO2LL-bTAAoo3FHv54VY_AHD8NTkThQmuUuTQB2qEmPVUNLEESygBY/s1280/1000496112.jpg" alt="Post Image" class="post-image"> </a> </article>
+        <article class="post"> <a href="https://example.com/link-for-andlua" class="post-link"> <h2 class="post-title">LOGIN FUNCTION CODING - ANDLUA+</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6oJeghAIcD2ILIb4ZO98prvmb8Co_x2313wzE44BS78Za4mXG9S24kl4EQyPsXI9KexZzHW9mkwmEtP5W2ia2t4PBvFmhqIXS05zpWD_PZ6s-kj4RMvGlzOBIupFUodOMkvoHqqn3TRazsqr5RrYE2ZOQVLCrSpbrf33tSYBoiNaiLoN8rRci4ftv/s1920/1000495509.jpg" alt="Post Image" class="post-image"> </a> </article>
+        <article class="post"> <a href="#" class="post-link"> <h2 class="post-title">Title</h2> <img src="#" alt="Post Image" class="post-image"> </a> </article>
     </div>
 
     <!-- Page 3: More Page -->
     <div id="page-more" class="page-container page-content-old">
-        <header class="header"><h1>Premium</h1></header>
+        <header class="header"><h1>More Resources & Tutorials</h1></header>
         <ul class="link-list">
-            <li><a href="#" target="_blank">Coming Soon</a></li>
+            <li><a href="#" target="_blank">LiveOverflow YouTube Channel</a></li>
+            <li><a href="#" target="_blank">The Cyber Mentor</a></li>
+            <li><a href="#" target="_blank">Open Security Training</a></li>
+            <li><a href="#" target="_blank">Crackmes.one - Practice Your Skills</a></li>
         </ul>
     </div>
-    
-    <!-- START: === MODIFIED TOOLS PAGE === -->
-    <div id="page-tools" class="page-container">
-        <!-- MODIFIED: Header now has title on left and search bar on right -->
-        <header class="tools-header">
-            <h1 class="tools-page-title">Tools</h1>
-            <div class="search-bar">
-                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                <input type="text" id="tool-search-input" placeholder="Search tools...">
-            </div>
-        </header>       
-
-        <ul class="tools-list">
-            <li class="tool-item" data-url="https://openinapp.link/qo4uk"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaWg3NftuScWfS58HvAK_-kHMJ00CO86LvZrTM5hYloDJ06VoZHAlB-YfwVYr9wx0f1H_pn26NNFL45AU999F_boZy49wY9w32l5jb9cNlg7uPf41LtjrPIstPx_VAAoHScSBRp9JWjy8ZPWwieLcp8_I-v-ZrZAi18V9GhQRImKG_aJabhhu02Fr5/s1080/1000549253.png" alt="icon" class="tool-icon"><span class="tool-name">CONFIG & OBB EDITOR</span></li>
-            <li class="tool-item" data-url="https://openinapp.link/yj7qc"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrfWtSmFBtzXjujOrabKhKr90Npv-GdSWnJgkcKMTlT2CXfa2KIW3y-UAVrCAXgPShDS1mCZ5Cfv-O1JlSS0oSMxc5w0epeR3m97whlEGgtrBiRo3iANNhakRmY92av-3v1ZzIteRHPBYtJ1v7hJ5SNJw7OhJrSuTsCBArWFtT1_SjXr-wPKEQvcHh/s150/MT%20Manager.png" alt="icon" class="tool-icon"><span class="tool-name">MT MANAGER</span></li>
-            <li class="tool-item" data-url="https://openinapp.link/iy6cw"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidUEuKsT8BzajoBM2aJoc98kXSc55Bf5Ytlde22Et3LkgvDqvJU1lVafTxWMox5GrTEdz7llm54txJaWCT65hLRaHThbG7kn2-BSfzB4Cf9KwdD595CWGNIyc0ZgdU8-a0uqlArF-zuLytRlynFOwZrtAv4J1rB2qSvwM0Fw9RxavJlGFhaTSsIdLp/s150/MT%20VIP.png" alt="icon" class="tool-icon"><span class="tool-name">MT VIP</span></li>
-            <li class="tool-item" data-url="https://openinapp.link/dy2jp"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBW5UVSvEYeVp9-E6NVseaA_7k7XlxCu8t7Z1NKJpTXRNnLVc3ffwSdkz9d_OX3g0-3xSliYmxysA2Xd5if1dveKzdZRpR__XcHXXTreMk56sAv5ug5szG7Jv6RnLvvQbZvYrlJMhtE3ecnKcf8f7wfsO0X1MCZRfc9nojiLch_bRQVtiK_pN7AFd4/s150/Hex.png" alt="icon" class="tool-icon"><span class="tool-name">HEX EDITOR </span></li>
-            <li class="tool-item" data-url="https://sfl.gl/n7i92Ms"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiE7nVsQ79UIDAV-0VE5amQCvDymZDkFzvbigKLlGymWeXIQn3WzhYzJZ5wlX1Dd7rerM6Ozdl3g-UiBIYGqL8D8kIYbWxqckMFBKwy8WEIqGG9w7GVCWtOEq3e6057Qx8sNOQsRvFMhaCNw3ron_s3yRFhjypfG0xzP5Le74W2KL2JNIFIP_YwpE3e/s192/Exagear.png" alt="icon" class="tool-icon"><span class="tool-name">EXAGEAR</span></li>
-            <li class="tool-item" data-url="https://openinapp.link/qujzw"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhziO-VOXk4gkuGIZyigCAchCasy84SCycHQT8jSoqt_uR1X_3y2qYcX21b061Kc0BC5j-5uBF_cy_VcRR2_4MUqri4_pILRhM6E4joGmBPwVjTY3IcDzibckWx8VQ0e9qqknKD_mJ-kyy6STqH2Cyf1SS6uwzfYmbqevuB3DDfm2Fh0WlV0_460FX7/s150/Winlator.png" alt="icon" class="tool-icon"><span class="tool-name">WINLATOR</span></li>
-            <li class="tool-item" data-url="https://openinapp.link/v9ik6"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGjcPXErVMateCtrPj5UAZa4RdfqYeCBOTONyJjiDjHBhJjFXk6yBh8PraztsTcONul462ZAWZCogVLJIgsJ0oxOyB-_v7A93q1FuquvsIY_CMjvaU4bFTUFKMeMGYsYZwmaciXQ1CqKf4gPCHK2AkA6qPJBUJRhhpyEeYwbxQyzWQJUIxOcJui7ZE/s150/DS.png" alt="icon" class="tool-icon"><span class="tool-name">OLD DUAL SPACE & OPENER</span></li>
-            <li class="tool-item" data-url="https://openinapp.link/i4wfw"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGjcPXErVMateCtrPj5UAZa4RdfqYeCBOTONyJjiDjHBhJjFXk6yBh8PraztsTcONul462ZAWZCogVLJIgsJ0oxOyB-_v7A93q1FuquvsIY_CMjvaU4bFTUFKMeMGYsYZwmaciXQ1CqKf4gPCHK2AkA6qPJBUJRhhpyEeYwbxQyzWQJUIxOcJui7ZE/s150/DS.png" alt="icon" class="tool-icon"><span class="tool-name">NEW DUAL SPACE & OPENER</span></li>
-            <li class="tool-item" data-url="https://sfl.gl/rGeo1"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja-v67UtEA5-9zB9omNXjVesCSG0JRukZgaG00IDAu7pqJE2DjMBTnizsNYwtLJueluC7WEeJ5o5mQO9Z2uH6uPv3eBTBwuJBHF6rNiLHaS2tVhJDNrK7iQJdQFRWyBvJfB2K0b9Bnl0NlvkW1rqJay9piQ5DdBbY9-Jpsp6t0KoGYtu_mXHa5A_wX/s150/Virtual%20MOD.png" alt="icon" class="tool-icon"><span class="tool-name">VIRTUAL MOD</span></li>
-            <li class="tool-item" data-url="https://openinapp.link/7z1e0"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAyp1RpT33cFds1ggN2BEbg2CqIvEFg_YReiJclfgIhore9Zu7O0GucRlge_v3638cjnxa78ETp8DcYj3mOINVGl0dPK5uVZVQx_KH8RL_5YORcMHivLAZfwS_fC9Nv0SiqQBREmY6bmzM0UJSqAEDYZiwlhq8g8HqidRNtp3iRSZucwLihaxpFbMx/s150/Andlua%206.8.png" alt="icon" class="tool-icon"><span class="tool-name">ANDLUA+ (6.8)</span></li>
-            <li class="tool-item" data-url="https://openinapp.link/7z1e0"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSdADbzh1LXvV5fRWUMAKHOvRs3Annd7zyTjjIyj9WTaSw5RGTul0F0LFSJSCmdrO-Q5Wty98_QTdTGxc1MN6QLjFDvsnXMvebj87AWXqBbI1dcEFu39eaag8Tc9l0zs0rs0s1R9mHQZ4Bps7Uz5YLUoqhOZKKY7jFHeaLsOZODhxUoukzX7fqR47C/s150/Andlua%207.0.png" alt="icon" class="tool-icon"><span class="tool-name">ANDLUA+ (7.0)</span></li>
-            <li class="tool-item" data-url="https://openinapp.link/grzb9"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPUZJKyCDikTH9Sh4QNnkju4UVAU0EOhsPoaHS5BKNWcdLsE7_stCao6y3CQUrWshdFIR85y0yOVGrqKYBeuNT_5nM02mLp2z6w5t3-D8F2ErQ6f0EqhMorNsN3ZjqSHUn7SOHWedq3wvexTXk4UbgNuTR32MzxrWoD9F6t-aP6aSIFlkhicfAeoYg/s150/ZArchiver.png" alt="icon" class="tool-icon"><span class="tool-name">ZARCHIVER</span></li>
-            
-        </ul>
-    </div>
-    <!-- END: === MODIFIED TOOLS PAGE === -->
-
 
     <!-- Page 4: About Page -->
     <div id="page-about" class="page-container">
@@ -388,11 +292,11 @@
     <!-- Exit Confirmation Pop-up (Modal) -->
     <div id="exit-modal" class="modal-overlay">
         <div class="modal-content">
-            <p class="title">(⁠⊙⁠_⁠◎⁠)</p>
-            <p class="message">Chutiya Samjha Hai Mere Ko</p>
+            <p class="title">Exit</p>
+            <p class="message">Are you sure you want to exit?</p>
             <div class="modal-buttons">
-                <button id="exit-cancel-btn" class="modal-button secondary">Karwali Beizati</button>
-                <button id="exit-confirm-btn" class="modal-button primary">Nikal Laude</button>
+                <button id="exit-cancel-btn" class="modal-button secondary">Cancel</button>
+                <button id="exit-confirm-btn" class="modal-button primary">Exit</button>
             </div>
         </div>
     </div>
@@ -410,7 +314,7 @@
     
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // --- SPLASH SCREEN LOGIC ---
+        // --- SPLASH SCREEN LOGIC (RESTORED) ---
         const splashScreen = document.getElementById('splash-screen');
         if (splashScreen) {
             const loadingStatus = document.getElementById('loading-status');
@@ -419,12 +323,12 @@
             setTimeout(() => { loadingStatus.textContent = 'Finalizing...'; }, 2000);
         }
 
-        // --- PAGE SWITCHING LOGIC ---
+        // --- ORIGINAL ELEMENTS AND PAGE SWITCHING LOGIC ---
         const navItems = document.querySelectorAll('.nav-item');
         const pages = document.querySelectorAll('.page-container');
         const gridItems = document.querySelectorAll('.grid-item');
         const body = document.body;
-        const gradientClasses = ['bg-gradient-home', 'bg-gradient-guide', 'bg-gradient-posts', 'bg-gradient-more', 'bg-gradient-about', 'bg-gradient-tools'];
+        const gradientClasses = ['bg-gradient-home', 'bg-gradient-guide', 'bg-gradient-posts', 'bg-gradient-more', 'bg-gradient-about'];
         
         function switchPage(pageId) {
             pages.forEach(p => { p.style.display = 'none'; p.classList.remove('active'); });
@@ -433,24 +337,17 @@
                 targetPage.style.display = 'block'; 
                 targetPage.classList.add('active');
             }
-            
             navItems.forEach(n => n.classList.remove('active'));
-
             const navItem = document.querySelector(`.nav-item[data-page="${pageId}"]`);
             let newGradientClass;
-
             if (navItem) {
                 navItem.classList.add('active');
                 newGradientClass = navItem.dataset.gradientClass;
             } else {
-                document.querySelector(`.nav-item[data-page="home"]`).classList.add('active');
                 if (pageId === 'guide') { newGradientClass = 'bg-gradient-guide'; }
-                if (pageId === 'tools') { newGradientClass = 'bg-gradient-tools'; }
             }
-            
             body.classList.remove(...gradientClasses);
             if (newGradientClass) { body.classList.add(newGradientClass); }
-
             if (pageId === 'about') {
                 const profilePic = document.querySelector('.profile-pic');
                 if (profilePic) {
@@ -461,19 +358,16 @@
             }
         }
 
-        // --- EVENT LISTENERS ---
+        // --- ORIGINAL EVENT LISTENERS ---
         navItems.forEach(item => { item.addEventListener('click', function(e) { e.preventDefault(); switchPage(this.dataset.page); }); });
         gridItems.forEach(item => { 
             if (item.tagName.toLowerCase() !== 'a') {
-                item.addEventListener('click', function() { 
-                    const targetTab = this.dataset.targetTab;
-                    switchPage(targetTab);
-                }); 
+                item.addEventListener('click', function() { switchPage(this.dataset.targetTab); }); 
             }
         });
         document.getElementById('guide-button').addEventListener('click', function(e) { e.preventDefault(); switchPage('guide'); });
 
-        // --- EXIT MODAL LOGIC ---
+        // --- ORIGINAL EXIT MODAL LOGIC ---
         const exitModal = document.getElementById('exit-modal');
         function showExitModal() { exitModal.classList.add('active'); }
         function hideExitModal() { exitModal.classList.remove('active'); }
@@ -485,10 +379,10 @@
         });
         document.querySelector('.donate-button').addEventListener('contextmenu', e => { e.preventDefault(); showExitModal(); });
         
-        // --- POST SEARCH FILTER LOGIC ---
-        const postSearchInput = document.getElementById('post-search-input');
-        if (postSearchInput) {
-            postSearchInput.addEventListener('input', function() {
+        // --- ORIGINAL POST SEARCH FILTER LOGIC ---
+        const searchInput = document.getElementById('post-search-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase().trim();
                 const postsOnPage = document.querySelectorAll('#page-posts .post');
                 postsOnPage.forEach(post => {
@@ -501,7 +395,7 @@
             });
         }
         
-        // --- TOAST & COPY LOGIC ---
+        // --- NEW AND IMPROVED: TOAST & COPY LOGIC ---
         const toast = document.getElementById('toast-notification');
         let toastTimeout;
 
@@ -545,35 +439,6 @@
                 }
             });
         });
-
-        const toolItems = document.querySelectorAll('#page-tools .tool-item');
-        toolItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const urlToCopy = this.dataset.url;
-                if (urlToCopy && urlToCopy !== '#') {
-                    copyTextToClipboard(urlToCopy);
-                } else {
-                    showToast('No link available for this tool');
-                }
-            });
-        });
-
-        // --- NEW: TOOL SEARCH FILTER LOGIC ---
-        const toolSearchInput = document.getElementById('tool-search-input');
-        if (toolSearchInput) {
-            toolSearchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase().trim();
-                const toolsOnPage = document.querySelectorAll('#page-tools .tool-item');
-                toolsOnPage.forEach(tool => {
-                    const nameElement = tool.querySelector('.tool-name');
-                    if (nameElement) {
-                        const nameText = nameElement.textContent.toLowerCase();
-                        // Use 'flex' because the items are display:flex
-                        tool.style.display = nameText.includes(searchTerm) ? 'flex' : 'none';
-                    }
-                });
-            });
-        }
 
     });
     </script>
