@@ -78,16 +78,69 @@
         .icon-apk { background-color: #dcfce7; } .icon-apk svg { color: #22c55e; }
         .icon-more { background-color: #e0f2fe; } .icon-more svg { color: #0ea5e9; }
 
-        /* === STYLES for Posts page === */
-        .page-content-old { max-width: 800px; margin: 5px auto 20px; padding: 5px 15px 15px; background: transparent; }
-        #page-posts .header { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-        #page-posts .header h1 { margin: 0; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-family: 'Spectral', serif; font-size: 28px; }
-        .post { margin-bottom: 30px; text-align: center; } 
-        .post-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
-        #page-posts .post-title { font-family: 'Playpen Sans Arabic', sans-serif; font-size: 12px; color: #ffffff; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); margin-bottom: -6px; position: relative; letter-spacing: 0.5px; }
-        .post-image { width: 76%; height: auto; border-radius: 8px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: 0 auto; }
-        
-        /* STYLES for Header with Search Bar */
+        /* === START: UPDATED STYLES FOR RESOURCES PAGE (#page-posts) === */
+        #page-posts { 
+            padding: 0 15px 15px 15px; 
+        }
+        #page-posts .header { 
+            padding: 15px 0;
+            margin-bottom: 15px; 
+            border-bottom: none; /* Removed old border */
+        }
+        #page-posts .header h1 { 
+            margin: 0; 
+            color: #ffffff; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+            font-family: 'Spectral', serif; 
+            font-size: 28px; 
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .resource-item {
+            background-color: #262626; /* Dark grey from screenshot */
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .resource-item:active {
+            transform: scale(0.96);
+        }
+
+        .resource-image {
+            width: 100%;
+            height: 90px; /* Consistent height for all images */
+            object-fit: cover; /* Prevents image stretching */
+            display: block;
+        }
+
+        .resource-title {
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 15px 8px;
+            line-height: 1.3;
+            flex-grow: 1; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* === END: UPDATED STYLES FOR RESOURCES PAGE === */
+
+        /* STYLES for Header with Search Bar (Used on multiple pages) */
         .header-content { display: flex; justify-content: space-between; align-items: center; }
         .search-bar { position: relative; }
         .search-bar .search-icon { position: absolute; top: 50%; left: 12px; transform: translateY(-50%); width: 18px; height: 18px; pointer-events: none; }
@@ -247,6 +300,10 @@
             transition: max-height 0.4s ease-out;
             background-color: transparent;
         }
+        /* Styles for posts inside Premium accordions */
+        #page-more .post { margin-bottom: 20px; text-align: center; } 
+        #page-more .post-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
+        #page-more .post-image { width: 76%; height: auto; border-radius: 8px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 0 auto; }
         #page-more .post-title {
             font-family: 'Playpen Sans Arabic', sans-serif;
             font-size: 14px;
@@ -315,7 +372,16 @@
                 <div class="grid-item" data-target-tab="about"><div class="icon-bg icon-vpn"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286z" /></svg></div><p>About Me</p></div>              
             </div>
         </div>
-        <a href="#" class="donate-button">FREE PANEL</a>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '8012fd78d5483bf421b2dc5f3092ec78',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/8012fd78d5483bf421b2dc5f3092ec78/invoke.js"></script>
         <p class="footer-text">Keep It Here: No Sharing, No Reuploads</p>
     </div>
 
@@ -359,42 +425,98 @@
         </div>
     </div>
     
-    <!-- Page 2: Posts Page -->
-    <div id="page-posts" class="page-container page-content-old">
+    <!-- Page 2: Posts Page (REDESIGNED) -->
+    <div id="page-posts" class="page-container">
         <header class="header">
             <div class="header-content">
                 <h1>Resources</h1>
                 <div class="search-bar">
                     <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                    <input type="text" id="post-search-input" placeholder="Search posts...">
+                    <input type="text" id="post-search-input" placeholder="Search...">
                 </div>
             </div>
         </header>
-        <article class="post"> <a href="https://sfl.gl/pzV6" class="post-link"> <h2 class="post-title">VIRTUAL SETUP V4 - MULTI CLONER</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQUSL5c7ZE0zUvcMIg_vnVUL5XjsNmpVLTjXYMedz4UQrFEcGJ1RBWaxlB6v1GYJWMDxpOfETQL1deOwsGOcvUNNE_hHNP1rrh0r9707Ap3p-yQeAmhww0pKug4RkVbQYICGpLo43Vv5QigDUxMssC1QU2U4-_z73HC5akYxXVlyCj-YuwAbLsOzfo/s1280/1000499834.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/f7SwUEz" class="post-link"> <h2 class="post-title">FIX GUEST ID LOGIN PROBLEM - X</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ1yzErkep3oQQsRpjInAoOScDlnzMj34nFztKwzg3WSDVI8zDox82wrUz6Q88xW51VF7K8Jl51WlsXk-HdrKHwNZj7vz3kfnsvJ0DTkjGuI8tdomRdImku5fnd9JTjQN4lelHJL43OPU_nBco6NDOhnI7XlD2MlF07CBZp_x8V3_kA_zpc7-hRZcT/s1920/1000499401.png" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/ATp8c" class="post-link"> <h2 class="post-title">VIRTUAL SETUP V3 - PLAYBOX</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhFsYYQVB2b5hc_cIfDLVWHDHz0evCYTPcvW5LIQdu6faekjTkJLvw_zgKYVvrZFKNbVSWqC7DukFvnv1bdItm7giS8akttSx_KATVCQPa1FSx-RWHefvQx49U-VQLWLEeuddO2LL-bTAAoo3FHv54VY_AHD8NTkThQmuUuTQB2qEmPVUNLEESygBY/s1280/1000496112.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/ne3pt" class="post-link"> <h2 class="post-title">LOGIN FUNCTION CODING - ANDLUA+</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6oJeghAIcD2ILIb4ZO98prvmb8Co_x2313wzE44BS78Za4mXG9S24kl4EQyPsXI9KexZzHW9mkwmEtP5W2ia2t4PBvFmhqIXS05zpWD_PZ6s-kj4RMvGlzOBIupFUodOMkvoHqqn3TRazsqr5RrYE2ZOQVLCrSpbrf33tSYBoiNaiLoN8rRci4ftv/s1920/1000495509.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/uDcT" class="post-link"> <h2 class="post-title">ALL MISTAKES SOLVE - PROBLEMS</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg3283YYaNBSXdal5_n1QieTmRIV9mYAStThPiTOwwlql0mo-QoJFUht4_Lx3SHU275viIHHTt7fXQo5VCQVoRWY3FUZUuUrJB5zRjI-rI39pBluasGLSJFvJ1-Pm9IrcofoiSa29r9kf__nI8bBlMiwiwMQAkZf4AjjBTseZXoHRenF5UPjSr2cl2/s1920/1000494897.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/r9ew3" class="post-link"> <h2 class="post-title">EXPIRY DATE CODING - ANDLUA+ </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnZRzsJgusWfzAPgo1tgDi2VK6PsL_zTBEIeQp6Lg3uWOc-mDN38PDZg1naHtkZVT2hu5bOI1nbOrI-jwNzm290yiPQt0stKxbAQCGNexGMmQaMghSZ_QAwY5uYaXQwvKX98IXB_oaVhmif4eOP4sh-asdhZjBGgJhgZio1Q2ZghT9Th8sQQhp4qK6/s1920/1000433368.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/4u9e6" class="post-link"> <h2 class="post-title">CONFIG RUN CODING - ANDLUA+ </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglSHVEAhyCmOZqLMRxPSuhcUpn4EnuySaGg9BTF_70d2q7YTr_qn5saLXJfEa2x6zDQAi7VaSSMjW7RJ-IQL4fNqTU-FZsxho7FAY4dkrYK9PMWakOlsKl44XiScrDRdmCbJhnaaFbmdl1zv-QXSfq4-v9QINMy67fvxOioR1hd7SkrJdwPyhXtBkT/s1920/Picsart_25-06-12_22-27-42-739.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/xbl2g" class="post-link"> <h2 class="post-title">NEW ALP PROJECT E1 - ANDLUA+ </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsupc_t6crXDnFPu6pnzmuDuSggm0BDpqAu1SytdVnZTtaOE5nXhlp7nxHfaT-P1ucEsLNZhQU6WpPyP6CrZtDmHsue9r5wmlaDpsrO0SAdo8YeZpcevCZfjq5UvNcIa3L7VHwbZNeDbEgH5bIIZp5nPEpcIXUzlT9TzT2OD5oo0uFpOE6xt5CXw0u/s1920/Picsart_25-06-12_10-55-47-292.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/Xu6C" class="post-link"> <h2 class="post-title">VIRTUAL SETUP V2 - CLONE MASTER </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo6PKMqbqKJGPmIoUlx7Bh3-hZVp4Kc_EjrBrGOhnX8yKYa39CyNT6xjRfPX6AAJMaBNSrDKSpBCyVMgLcEi2lsdQgwKVDEsiJtRGe-IEMICSdRBuyO8aI5rumAB3h1pBYXi8hyphenhyphenq2-KRVbmGw_VSyyuoho0GAtgUQmFfGIXtUzXEgKcpszP254Nus2/s1920/Picsart_25-06-10_16-44-58-005.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://sfl.gl/Xu6C" class="post-link"> <h2 class="post-title">VIRTUAL SETUP V1 - CLONE MASTER </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFAKcyXE1A2MRB7U7eouXqnS-7DSL7Wnn2KsZqTb0dmFZPYVw3yQY1vXTt81WC69xldZ6IfxvknSG1QFh03YHxvKT_FwMHvZ_jnlyuBLED3AsbKx0U511cE_d-j2CeZJiN9UPLJrLZM7xIDdiB6AKNkQm76hNlaCoobCNINAWpGJf7zCX0RQIvpKEu/s1920/Picsart_25-06-07_07-28-56-365.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/ncqls" class="post-link"> <h2 class="post-title">PC/3D HOLOGRAM CODING - GREEN</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWjIziysfJaUg-EdaIoM9BcIfi_GO3xt1K-GHLF5zOQWySh7sXeC0k9CiVilJOX59QAw097l1ygZkUglmJ3ywnhdVZiwqrlHD19wbHuq613KjRviMpIew8uUOxdA6TlsUPxtMll50T3okMsiSBJntXAxjXJIErmmBXIFk2trshhhUAG2kvxTnekf90/s1280/1000549150.png" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/i4wfw" class="post-link"> <h2 class="post-title">DOWNLOAD FAILED - DUAL SPACE</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyj4TiwbFWyfpgGU7Y6fWd5Ldqdh2TcTXynsEPkVzTnoC2C1t8zfWuupHBHYniJHsmZFlyGVlySICTniAHTfs55MEy12PFvaaT09xxuNH622bA8P3wu-DIQqwuPecSpQWUKsyQZrSC7ZUhjZPBIMOwTiiqhCJkRdEKZMnvC1de27bJWrM74Grwe7a2/s1280/1000549013.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/z1579" class="post-link"> <h2 class="post-title">MAGIC BULLET CODING - CACHE</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_nH_pZg59t08QZFLarO6Lx-dTgEZR16RSs6_ndUktOPNLFVCQA-OSF5VyHdZvzclUXQzAmvFmBaRgWBEVQPGn6XWYKmQgZxBqXgFjeUhyphenhyphenNtoggNCfaLxhd-qiLcFfSGPp1yXrtSww44qZ55AdXOtIS27TY2Q4xFZ2rhNDMN8icOz9SUxSxt4w5TJd/s1920/Picsart_25-05-31_11-11-24-712.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/qjr4f" class="post-link"> <h2 class="post-title">BODY HEADSHOT CODING - CACHE </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjF4kBBcZYrLDyL1CDV5thk1-NfSDhfP0iYxJhEMHhJtWBNroV4MD2UqxdiNMJVawy-WewLuhw0kI_MEytz2K90Lmkxf4T30dpXNuYw-ImXPXzTpgyNjlGts3cMEf-rZxBPLqkPQ3FUl-nOliksD-n8-q6ESDZ0OXLdJbvwmWadDIexvoSmKmtapzG1/s1920/Picsart_25-05-30_11-28-05-108.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/npxjb" class="post-link"> <h2 class="post-title">DRAG HEADSHOT CODING - CACHE </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjytYRSsOibjaObD-nqOnX4Jyw2zsfsc0HDHPneobpuwCoct4m6S6-CgZesOjv1qtVq46XjqlIBR7dgYO5adKTdX-mQU3W7ixrzY6iKC7fjVsNlu6Hr-0dmNH3BfUdz-xVyBx12FDXcN_HxfRvKxOJjaVfNfatBYqo_DxV_zsdMHwlhrCGJb9BJDb7O/s3264/Picsart_25-05-27_10-41-07-181.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/csx37" class="post-link"> <h2 class="post-title">HAND ANTENNA - ASSETINDEXER </h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKGMtTnUz0j4gEvMJJwdBcZDlFSrXlwkr4uRvlKpOq1Gbd_7tQSLf5XfEIB4xKlS45u8WqcDdH-SqAmXHXnPqt7XDLGaMxI363OO7lDzvObrDTXuw5DnfJ8z9xOpgnwmoN1ivIXrVyIpYg871zMoxhWgcU-qrAvz-kh4zwsOyYs1sUf2O3HmkNDRfN/s1920/Picsart_25-05-25_15-43-26-708.jpg" alt="Post Image" class="post-image"> </a> </article>
-        <article class="post"> <a href="https://openinapp.link/ot34e" class="post-link"> <h2 class="post-title">BODY HEADSHOT - ASSETINDEXER</h2> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxYpcWp8RoZhKcaWMp9TjL3VWqRPvDiBhPDEo6CLUEskBtPcjCVAQ0zkZsjMnDGdghBS9A6TQQtXBfLNNIL9BhLxkWl11pPzzdMqO-sjUagqVac0qJueFvSMRA-b8iqYcV5LGZ83HMP02VAjzV1kS_wZ1m7CvZBm_08S8aciBXmYCL-qF9YGgxkKn8/s1280/how_to_make_body_headshot_con.png" alt="Post Image" class="post-image"> </a> </article>        
+        
+        <!-- START: New Grid Layout -->
+        <div class="resources-grid">
+            <a href="https://sfl.gl/pzV6" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQUSL5c7ZE0zUvcMIg_vnVUL5XjsNmpVLTjXYMedz4UQrFEcGJ1RBWaxlB6v1GYJWMDxpOfETQL1deOwsGOcvUNNE_hHNP1rrh0r9707Ap3p-yQeAmhww0pKug4RkVbQYICGpLo43Vv5QigDUxMssC1QU2U4-_z73HC5akYxXVlyCj-YuwAbLsOzfo/s1280/1000499834.jpg" alt="VIRTUAL SETUP V4" class="resource-image">
+                <span class="resource-title">Virtual Setup V4</span>
+            </a>
+            <a href="https://sfl.gl/f7SwUEz" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ1yzErkep3oQQsRpjInAoOScDlnzMj34nFztKwzg3WSDVI8zDox82wrUz6Q88xW51VF7K8Jl51WlsXk-HdrKHwNZj7vz3kfnsvJ0DTkjGuI8tdomRdImku5fnd9JTjQN4lelHJL43OPU_nBco6NDOhnI7XlD2MlF07CBZp_x8V3_kA_zpc7-hRZcT/s1920/1000499401.png" alt="FIX GUEST ID" class="resource-image">
+                <span class="resource-title">Fix Guest ID</span>
+            </a>
+            <a href="https://sfl.gl/ATp8c" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhFsYYQVB2b5hc_cIfDLVWHDHz0evCYTPcvW5LIQdu6faekjTkJLvw_zgKYVvrZFKNbVSWqC7DukFvnv1bdItm7giS8akttSx_KATVCQPa1FSx-RWHefvQx49U-VQLWLEeuddO2LL-bTAAoo3FHv54VY_AHD8NTkThQmuUuTQB2qEmPVUNLEESygBY/s1280/1000496112.jpg" alt="VIRTUAL SETUP V3" class="resource-image">
+                <span class="resource-title">Virtual Setup V3</span>
+            </a>
+            <a href="https://openinapp.link/ne3pt" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6oJeghAIcD2ILIb4ZO98prvmb8Co_x2313wzE44BS78Za4mXG9S24kl4EQyPsXI9KexZzHW9mkwmEtP5W2ia2t4PBvFmhqIXS05zpWD_PZ6s-kj4RMvGlzOBIupFUodOMkvoHqqn3TRazsqr5RrYE2ZOQVLCrSpbrf33tSYBoiNaiLoN8rRci4ftv/s1920/1000495509.jpg" alt="LOGIN CODING" class="resource-image">
+                <span class="resource-title">Login Coding</span>
+            </a>
+            <a href="https://sfl.gl/uDcT" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg3283YYaNBSXdal5_n1QieTmRIV9mYAStThPiTOwwlql0mo-QoJFUht4_Lx3SHU275viIHHTt7fXQo5VCQVoRWY3FUZUuUrJB5zRjI-rI39pBluasGLSJFvJ1-Pm9IrcofoiSa29r9kf__nI8bBlMiwiwMQAkZf4AjjBTseZXoHRenF5UPjSr2cl2/s1920/1000494897.jpg" alt="ALL MISTAKES SOLVE" class="resource-image">
+                <span class="resource-title">All Mistakes Solve</span>
+            </a>
+            <a href="https://openinapp.link/r9ew3" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnZRzsJgusWfzAPgo1tgDi2VK6PsL_zTBEIeQp6Lg3uWOc-mDN38PDZg1naHtkZVT2hu5bOI1nbOrI-jwNzm290yiPQt0stKxbAQCGNexGMmQaMghSZ_QAwY5uYaXQwvKX98IXB_oaVhmif4eOP4sh-asdhZjBGgJhgZio1Q2ZghT9Th8sQQhp4qK6/s1920/1000433368.jpg" alt="EXPIRY DATE CODING" class="resource-image">
+                <span class="resource-title">Expiry Date Coding</span>
+            </a>
+            <a href="https://openinapp.link/4u9e6" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglSHVEAhyCmOZqLMRxPSuhcUpn4EnuySaGg9BTF_70d2q7YTr_qn5saLXJfEa2x6zDQAi7VaSSMjW7RJ-IQL4fNqTU-FZsxho7FAY4dkrYK9PMWakOlsKl44XiScrDRdmCbJhnaaFbmdl1zv-QXSfq4-v9QINMy67fvxOioR1hd7SkrJdwPyhXtBkT/s1920/Picsart_25-06-12_22-27-42-739.jpg" alt="CONFIG RUN CODING" class="resource-image">
+                <span class="resource-title">Config Run Coding</span>
+            </a>
+            <a href="https://openinapp.link/xbl2g" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsupc_t6crXDnFPu6pnzmuDuSggm0BDpqAu1SytdVnZTtaOE5nXhlp7nxHfaT-P1ucEsLNZhQU6WpPyP6CrZtDmHsue9r5wmlaDpsrO0SAdo8YeZpcevCZfjq5UvNcIa3L7VHwbZNeDbEgH5bIIZp5nPEpcIXUzlT9TzT2OD5oo0uFpOE6xt5CXw0u/s1920/Picsart_25-06-12_10-55-47-292.jpg" alt="NEW ALP PROJECT" class="resource-image">
+                <span class="resource-title">New Alp Project</span>
+            </a>
+            <a href="https://sfl.gl/Xu6C" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo6PKMqbqKJGPmIoUlx7Bh3-hZVp4Kc_EjrBrGOhnX8yKYa39CyNT6xjRfPX6AAJMaBNSrDKSpBCyVMgLcEi2lsdQgwKVDEsiJtRGe-IEMICSdRBuyO8aI5rumAB3h1pBYXi8hyphenhyphenq2-KRVbmGw_VSyyuoho0GAtgUQmFfGIXtUzXEgKcpszP254Nus2/s1920/Picsart_25-06-10_16-44-58-005.jpg" alt="VIRTUAL SETUP V2" class="resource-image">
+                <span class="resource-title">Virtual Setup V2</span>
+            </a>
+            <a href="https://sfl.gl/Xu6C" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFAKcyXE1A2MRB7U7eouXqnS-7DSL7Wnn2KsZqTb0dmFZPYVw3yQY1vXTt81WC69xldZ6IfxvknSG1QFh03YHxvKT_FwMHvZ_jnlyuBLED3AsbKx0U511cE_d-j2CeZJiN9UPLJrLZM7xIDdiB6AKNkQm76hNlaCoobCNINAWpGJf7zCX0RQIvpKEu/s1920/Picsart_25-06-07_07-28-56-365.jpg" alt="VIRTUAL SETUP V1" class="resource-image">
+                <span class="resource-title">Virtual Setup V1</span>
+            </a>
+            <a href="https://openinapp.link/ncqls" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWjIziysfJaUg-EdaIoM9BcIfi_GO3xt1K-GHLF5zOQWySh7sXeC0k9CiVilJOX59QAw097l1ygZkUglmJ3ywnhdVZiwqrlHD19wbHuq613KjRviMpIew8uUOxdA6TlsUPxtMll50T3okMsiSBJntXAxjXJIErmmBXIFk2trshhhUAG2kvxTnekf90/s1280/1000549150.png" alt="PC/3D HOLOGRAM" class="resource-image">
+                <span class="resource-title">PC/3D Hologram</span>
+            </a>
+            <a href="https://openinapp.link/i4wfw" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyj4TiwbFWyfpgGU7Y6fWd5Ldqdh2TcTXynsEPkVzTnoC2C1t8zfWuupHBHYniJHsmZFlyGVlySICTniAHTfs55MEy12PFvaaT09xxuNH622bA8P3wu-DIQqwuPecSpQWUKsyQZrSC7ZUhjZPBIMOwTiiqhCJkRdEKZMnvC1de27bJWrM74Grwe7a2/s1280/1000549013.jpg" alt="DOWNLOAD FAILED" class="resource-image">
+                <span class="resource-title">Download Failed</span>
+            </a>
+            <a href="https://openinapp.link/z1579" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_nH_pZg59t08QZFLarO6Lx-dTgEZR16RSs6_ndUktOPNLFVCQA-OSF5VyHdZvzclUXQzAmvFmBaRgWBEVQPGn6XWYKmQgZxBqXgFjeUhyphenhyphenNtoggNCfaLxhd-qiLcFfSGPp1yXrtSww44qZ55AdXOtIS27TY2Q4xFZ2rhNDMN8icOz9SUxSxt4w5TJd/s1920/Picsart_25-05-31_11-11-24-712.jpg" alt="MAGIC BULLET" class="resource-image">
+                <span class="resource-title">Magic Bullet</span>
+            </a>
+            <a href="https://openinapp.link/qjr4f" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjF4kBBcZYrLDyL1CDV5thk1-NfSDhfP0iYxJhEMHhJtWBNroV4MD2UqxdiNMJVawy-WewLuhw0kI_MEytz2K90Lmkxf4T30dpXNuYw-ImXPXzTpgyNjlGts3cMEf-rZxBPLqkPQ3FUl-nOliksD-n8-q6ESDZ0OXLdJbvwmWadDIexvoSmKmtapzG1/s1920/Picsart_25-05-30_11-28-05-108.jpg" alt="BODY HEADSHOT" class="resource-image">
+                <span class="resource-title">Body Headshot</span>
+            </a>
+            <a href="https://openinapp.link/npxjb" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjytYRSsOibjaObD-nqOnX4Jyw2zsfsc0HDHPneobpuwCoct4m6S6-CgZesOjv1qtVq46XjqlIBR7dgYO5adKTdX-mQU3W7ixrzY6iKC7fjVsNlu6Hr-0dmNH3BfUdz-xVyBx12FDXcN_HxfRvKxOJjaVfNfatBYqo_DxV_zsdMHwlhrCGJb9BJDb7O/s3264/Picsart_25-05-27_10-41-07-181.jpg" alt="DRAG HEADSHOT" class="resource-image">
+                <span class="resource-title">Drag Headshot</span>
+            </a>
+            <a href="https://openinapp.link/csx37" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKGMtTnUz0j4gEvMJJwdBcZDlFSrXlwkr4uRvlKpOq1Gbd_7tQSLf5XfEIB4xKlS45u8WqcDdH-SqAmXHXnPqt7XDLGaMxI363OO7lDzvObrDTXuw5DnfJ8z9xOpgnwmoN1ivIXrVyIpYg871zMoxhWgcU-qrAvz-kh4zwsOyYs1sUf2O3HmkNDRfN/s1920/Picsart_25-05-25_15-43-26-708.jpg" alt="HAND ANTENNA" class="resource-image">
+                <span class="resource-title">Hand Antenna</span>
+            </a>
+            <a href="https://openinapp.link/ot34e" class="resource-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxYpcWp8RoZhKcaWMp9TjL3VWqRPvDiBhPDEo6CLUEskBtPcjCVAQ0zkZsjMnDGdghBS9A6TQQtXBfLNNIL9BhLxkWl11pPzzdMqO-sjUagqVac0qJueFvSMRA-b8iqYcV5LGZ83HMP02VAjzV1kS_wZ1m7CvZBm_08S8aciBXmYCL-qF9YGgxkKn8/s1280/how_to_make_body_headshot_con.png" alt="BODY HEADSHOT" class="resource-image">
+                <span class="resource-title">Body Headshot</span>
+            </a>
+        </div>
+        <!-- END: New Grid Layout -->
     </div>
 
-    <!-- Page 3: More Page (Premium) - MODIFIED -->
+    <!-- Page 3: More Page (Premium) -->
     <div id="page-more" class="page-container">
         
         <div class="premium-grid-container">
-            <a href="#" target="_blank" class="grid-action-button">Payment Proofs</a>
-            <a href="#" target="_blank" class="grid-action-button">Feedbacks</a>
+            <a href="https://t.me/+iQdAgDoR0FwxMjY1" target="_blank" class="grid-action-button">Payment Proofs</a>
+            <a href="https://t.me/+UYaJKlQcnVtjYWU1" target="_blank" class="grid-action-button">Feedbacks</a>
             <a href="#" id="refund-policy-btn" class="grid-action-button">Refund Policy</a>
             <a href="https://t.me/arisu9661" target="_blank" class="grid-action-button">24/7 Support</a>
             <!-- NEW BUTTON ADDED & CENTERED -->
@@ -622,17 +744,18 @@
         });
         document.querySelector('.donate-button').addEventListener('contextmenu', e => { e.preventDefault(); showExitModal(); });
         
-        // --- POST SEARCH FILTER LOGIC ---
+        // --- POST SEARCH FILTER LOGIC (UPDATED FOR NEW UI) ---
         const postSearchInput = document.getElementById('post-search-input');
         if (postSearchInput) {
             postSearchInput.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase().trim();
-                const postsOnPage = document.querySelectorAll('#page-posts .post');
+                const postsOnPage = document.querySelectorAll('#page-posts .resource-item');
                 postsOnPage.forEach(post => {
-                    const titleElement = post.querySelector('.post-title');
+                    const titleElement = post.querySelector('.resource-title');
                     if (titleElement) {
                         const titleText = titleElement.textContent.toLowerCase();
-                        post.style.display = titleText.includes(searchTerm) ? 'block' : 'none';
+                        // Use 'flex' because the new items use flexbox
+                        post.style.display = titleText.includes(searchTerm) ? 'flex' : 'none';
                     }
                 });
             });
@@ -669,8 +792,9 @@
             }
             document.body.removeChild(textArea);
         }
-
-        const postLinks = document.querySelectorAll('#page-posts .post-link, #page-more .post-link');
+        
+        // --- CLICK-TO-COPY LOGIC (UPDATED FOR NEW UI) ---
+        const postLinks = document.querySelectorAll('#page-posts .resource-item, #page-more .post-link');
         postLinks.forEach(link => {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
